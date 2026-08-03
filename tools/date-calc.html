@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c45d3a">
+    <title>日期计算器 - 免费在线算相差天数/日期推算</title>
+    <meta name="description" content="免费在线日期计算器：计算两个日期相差多少天，或在某日期基础上加减天/周/月/年推算新日期。简单好用，无需安装。">
+    <meta name="baidu_union_verify" content="12c06fb585923e45afa002468feead30">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://aifunnyplay.cn/tools/date-calc.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="日期计算器 - 免费在线算日期">
+    <meta property="og:description" content="计算两个日期相差天数，或在某日期上加減天/周/月/年。">
+    <meta property="og:url" content="https://aifunnyplay.cn/tools/date-calc.html">
+    <meta property="og:image" content="https://aifunnyplay.cn/default-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "日期计算器",
+      "description": "免费在线计算日期相差天数与日期推算。",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">跳到主内容</a>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-title">AI工具箱</a>
+            <nav>
+                <a href="../index.html">首页</a><a href="../index.html" class="nav-cta">🛠 小工具</a>
+            </nav>
+        </div>
+    </header>
+    <div class="ad-slot ad-top" id="ad-top"></div>
+    <div class="container">
+        <main id="main" class="static-page tool-page">
+            <section class="tool-card" id="date-calc">
+                <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span class="sep" aria-hidden="true">›</span><span>日期计算器</span></nav>
+                <div class="tool-head">
+                    <span class="tool-emoji">📅</span>
+                    <div>
+                        <h1>日期计算器</h1>
+                        <p class="tool-desc">算两个日期相差多少天，或者「某天 + 100 天是哪天」。项目排期、保质期、倒计时都常用。</p>
+                    </div>
+                </div>
+                <div class="tool-body">
+                    <h3 style="margin:.2rem 0 .8rem;">① 相差天数</h3>
+                    <div class="tool-row">
+                        <div class="tool-field">
+                            <label for="dc-date-a">起始日期</label>
+                            <input type="date" id="dc-date-a">
+                        </div>
+                        <div class="tool-field">
+                            <label for="dc-date-b">结束日期</label>
+                            <input type="date" id="dc-date-b">
+                        </div>
+                    </div>
+                    <button class="tool-btn" id="dc-diff-btn" type="button">计算相差天数</button>
+                    <div id="dc-diff-out" style="margin-top:1rem;"></div>
+
+                    <h3 style="margin:1.6rem 0 .8rem;">② 日期推算</h3>
+                    <div class="tool-row">
+                        <div class="tool-field">
+                            <label for="dc-from">起始日期</label>
+                            <input type="date" id="dc-from">
+                        </div>
+                        <div class="tool-field">
+                            <label for="dc-amount">数量</label>
+                            <input type="number" id="dc-amount" value="100" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-field">
+                            <label for="dc-unit">单位</label>
+                            <select id="dc-unit">
+                                <option value="day">天</option>
+                                <option value="week">周</option>
+                                <option value="month">月</option>
+                                <option value="year">年</option>
+                            </select>
+                        </div>
+                        <div class="tool-field">
+                            <label for="dc-dir">方向</label>
+                            <select id="dc-dir">
+                                <option value="add">之后（加上）</option>
+                                <option value="sub">之前（减去）</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="tool-btn" id="dc-calc-btn" type="button">推算结果日期</button>
+                    <div id="dc-calc-out" style="margin-top:1rem;"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>导航</h4>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../about.html">关于本站</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../contact.html">联系我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关说明</h4>
+                    <ul>
+                        <li><a href="../privacy.html">隐私政策</a></li>
+                        <li><a href="../disclaimer.html">免责声明</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../sitemap.html">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI工具箱 | 个人维护的非商业网站</p>
+                <p class="beian"><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow" class="beian">京ICP备2026032489号-1</a>&nbsp;&nbsp;<img width="16" height="18" src="../assets/images/gongan.png" alt="公安备案" style="width:16px;vertical-align:middle;margin-right:2px"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402056201" rel="noreferrer" target="_blank" class="beian">京公网安备11011402056201号</a></p>
+            </div>
+        </div>
+        <div class="ad-slot ad-footer" id="ad-footer"></div>
+    </footer>
+    <script src="../assets/js/tools-new.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
+</body>
+</html>

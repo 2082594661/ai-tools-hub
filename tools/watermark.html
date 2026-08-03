@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c45d3a">
+    <title>图片加水印 - 免费在线给图片加文字水印（本地处理）</title>
+    <meta name="description" content="免费在线图片加水印工具：上传图片，自定义文字、位置、透明度、字号和颜色，支持平铺水印。全程浏览器本地处理，不上传你的图片。">
+    <meta name="baidu_union_verify" content="12c06fb585923e45afa002468feead30">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://aifunnyplay.cn/tools/watermark.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="图片加水印 - 免费在线加水印">
+    <meta property="og:description" content="上传图片，自定义文字、位置、透明度，支持平铺水印，下载 PNG。">
+    <meta property="og:url" content="https://aifunnyplay.cn/tools/watermark.html">
+    <meta property="og:image" content="https://aifunnyplay.cn/default-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "图片加水印",
+      "description": "免费在线给图片加文字水印，本地处理，支持位置、透明度、平铺。",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">跳到主内容</a>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-title">AI工具箱</a>
+            <nav>
+                <a href="../index.html">首页</a><a href="../index.html" class="nav-cta">🛠 小工具</a>
+            </nav>
+        </div>
+    </header>
+    <div class="ad-slot ad-top" id="ad-top"></div>
+    <div class="container">
+        <main id="main" class="static-page tool-page">
+            <section class="tool-card" id="watermark">
+                <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span class="sep" aria-hidden="true">›</span><span>图片加水印</span></nav>
+                <div class="tool-head">
+                    <span class="tool-emoji">💧</span>
+                    <div>
+                        <h1>图片加水印</h1>
+                        <p class="tool-desc">给图片加文字水印，保护版权或标注来源。可调文字、位置、透明度、字号、颜色，还能整图平铺。全程浏览器本地处理，不上传图片。</p>
+                    </div>
+                </div>
+                <div class="tool-body">
+                    <div class="compress-drop" id="wm-drop" tabindex="0" role="button" aria-label="点击或拖拽图片到此处上传">
+                        点击选择图片，或把图片拖到这里<br><small>（支持 JPG / PNG / WebP，全程本地处理）</small>
+                    </div>
+                    <input type="file" id="wm-file" accept="image/*" hidden>
+                    <div id="wm-controls" style="display:none; margin-top:1rem;">
+                        <div class="tool-field">
+                            <label for="wm-text">水印文字</label>
+                            <input type="text" id="wm-text" value="AI趣味分享" maxlength="40">
+                        </div>
+                        <div class="tool-row">
+                            <div class="tool-field">
+                                <label for="wm-position">水印位置</label>
+                                <select id="wm-position">
+                                    <option value="topleft">左上</option>
+                                    <option value="topcenter" selected>正上</option>
+                                    <option value="topright">右上</option>
+                                    <option value="middleleft">左中</option>
+                                    <option value="center">居中</option>
+                                    <option value="middleright">右中</option>
+                                    <option value="bottomleft">左下</option>
+                                    <option value="bottomcenter">正下</option>
+                                    <option value="bottomright">右下</option>
+                                </select>
+                            </div>
+                            <div class="tool-field">
+                                <label for="wm-color">水印颜色</label>
+                                <input type="color" id="wm-color" value="#ffffff">
+                            </div>
+                        </div>
+                        <div class="tool-row">
+                            <div class="tool-field">
+                                <label for="wm-fontsize">字号（占图宽 %）</label>
+                                <input type="number" id="wm-fontsize" value="5" min="1" max="30" step="1">
+                            </div>
+                            <div class="tool-field">
+                                <label for="wm-opacity">不透明度（%）</label>
+                                <input type="number" id="wm-opacity" value="50" min="5" max="100" step="5">
+                            </div>
+                        </div>
+                        <div class="tool-field">
+                            <label style="display:inline-flex;align-items:center;gap:.4rem;font-weight:400;">
+                                <input type="checkbox" id="wm-tile" style="width:auto;"> 整图平铺水印（忽略位置）
+                            </label>
+                        </div>
+                        <div class="compress-preview" id="wm-preview"></div>
+                        <div class="compress-stats" id="wm-stats"></div>
+                        <a class="tool-btn" id="wm-download" download="watermarked.png">⬇️ 下载带水印图片</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>导航</h4>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../about.html">关于本站</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../contact.html">联系我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关说明</h4>
+                    <ul>
+                        <li><a href="../privacy.html">隐私政策</a></li>
+                        <li><a href="../disclaimer.html">免责声明</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../sitemap.html">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI工具箱 | 个人维护的非商业网站</p>
+                <p class="beian"><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow" class="beian">京ICP备2026032489号-1</a>&nbsp;&nbsp;<img width="16" height="18" src="../assets/images/gongan.png" alt="公安备案" style="width:16px;vertical-align:middle;margin-right:2px"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402056201" rel="noreferrer" target="_blank" class="beian">京公网安备11011402056201号</a></p>
+            </div>
+        </div>
+        <div class="ad-slot ad-footer" id="ad-footer"></div>
+    </footer>
+    <script src="../assets/js/tools-new.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
+</body>
+</html>

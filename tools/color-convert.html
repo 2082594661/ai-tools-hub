@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c45d3a">
+    <title>颜色转换 - 免费在线 HEX/RGB/HSL 互相转换</title>
+    <meta name="description" content="免费在线颜色转换器：输入 HEX、RGB 或 HSL 任意一种，自动换算出另外两种格式，实时色块预览，一键复制。">
+    <meta name="baidu_union_verify" content="12c06fb585923e45afa002468feead30">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://aifunnyplay.cn/tools/color-convert.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="颜色转换 - 免费在线颜色换算">
+    <meta property="og:description" content="HEX/RGB/HSL 互相转换，实时预览，一键复制。">
+    <meta property="og:url" content="https://aifunnyplay.cn/tools/color-convert.html">
+    <meta property="og:image" content="https://aifunnyplay.cn/default-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "颜色转换",
+      "description": "免费在线 HEX/RGB/HSL 颜色互相转换。",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">跳到主内容</a>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-title">AI工具箱</a>
+            <nav>
+                <a href="../index.html">首页</a><a href="../index.html" class="nav-cta">🛠 小工具</a>
+            </nav>
+        </div>
+    </header>
+    <div class="ad-slot ad-top" id="ad-top"></div>
+    <div class="container">
+        <main id="main" class="static-page tool-page">
+            <section class="tool-card" id="color-convert">
+                <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span class="sep" aria-hidden="true">›</span><span>颜色转换</span></nav>
+                <div class="tool-head">
+                    <span class="tool-emoji">🎨</span>
+                    <div>
+                        <h1>颜色转换</h1>
+                        <p class="tool-desc">输入 HEX、RGB 或 HSL 任意一种，自动换算出另外两种，附实时色块预览，点「复制」即用。</p>
+                    </div>
+                </div>
+                <div class="tool-body">
+                    <div class="tool-usage" role="note">
+                        <strong>怎么用：</strong>
+                        <span>① 在左侧彩色方块里<em>按住拖动</em>选色，拖下方彩虹条换色相；</span>
+                        <span>② 也可直接在输入框填 <code>#ff6b6b</code> 或 <code>rgb(255,107,107)</code>；</span>
+                        <span>③ 点下方「热门颜色」一键套用；</span>
+                        <span>④ 点 HEX / RGB / HSL 后的「复制」即可拿走。</span>
+                    </div>
+                    <div class="color-picker">
+                        <div class="cp-board">
+                            <span class="cp-label">🎯 拖动方块选色（左右=饱和度，上下=明暗）</span>
+                            <div class="cp-sv" id="cc-sv" role="slider" tabindex="0" aria-label="饱和度与明度选择区，用方向键微调">
+                                <div class="cp-sv-handle" id="cc-sv-handle"></div>
+                            </div>
+                            <span class="cp-label" style="margin-top:14px">🌈 拖动彩虹条换色相（红→黄→绿→青→蓝→紫）</span>
+                            <div class="cp-hue" id="cc-hue" role="slider" tabindex="0" aria-label="色相选择条，用左右方向键切换">
+                                <div class="cp-hue-handle" id="cc-hue-handle"></div>
+                            </div>
+                        </div>
+                        <div class="cp-panel">
+                            <div class="color-swatch" id="cc-swatch"></div>
+                            <div class="tool-field">
+                                <label for="cc-input">输入颜色（支持 #ff6b6b / rgb(255,107,107) / hsl(0,100%,71%)）</label>
+                                <input type="text" id="cc-input" value="#c45d3a" placeholder="#ff6b6b 或 rgb(255,107,107) 或 hsl(0,100%,71%)">
+                            </div>
+                            <div id="cc-output"></div>
+                        </div>
+                    </div>
+                    <section class="color-popular" aria-label="热门颜色推荐">
+                        <h3>🔥 热门颜色</h3>
+                        <p class="popular-tip">点一下色块，立即应用到上方取色器，HEX / RGB / HSL 数值同步更新</p>
+                        <div class="popular-grid" id="cc-popular"></div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>导航</h4>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../about.html">关于本站</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../contact.html">联系我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关说明</h4>
+                    <ul>
+                        <li><a href="../privacy.html">隐私政策</a></li>
+                        <li><a href="../disclaimer.html">免责声明</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../sitemap.html">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI工具箱 | 个人维护的非商业网站</p>
+                <p class="beian"><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow" class="beian">京ICP备2026032489号-1</a>&nbsp;&nbsp;<img width="16" height="18" src="../assets/images/gongan.png" alt="公安备案" style="width:16px;vertical-align:middle;margin-right:2px"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402056201" rel="noreferrer" target="_blank" class="beian">京公网安备11011402056201号</a></p>
+            </div>
+        </div>
+        <div class="ad-slot ad-footer" id="ad-footer"></div>
+    </footer>
+    <script src="../assets/js/tools-new.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
+</body>
+</html>
