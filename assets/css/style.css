@@ -1410,3 +1410,66 @@ body.no-ads .ad-slot { display: none; }
 /* 年龄计算器结果 */
 .ac-result { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: .8rem; }
 
+/* ══════════════════════════════════════
+   UI 优化 v3：搜索框 / 工具分类 / 去双层容器 / 按钮次级化 / 页脚减重
+   ══════════════════════════════════════ */
+/* 首页工具搜索框 */
+.tool-search { max-width: 560px; margin: -0.6rem auto 2rem; padding: 0 16px; }
+.tool-search input {
+  width: 100%; padding: .95rem 1.4rem; border-radius: var(--r-full);
+  border: 1px solid var(--clr-border); background: var(--clr-surface);
+  color: var(--clr-text); font-size: 1rem; font-family: inherit;
+  box-shadow: var(--sh-card-hover); transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.tool-search input:focus { outline: none; border-color: var(--clr-primary); box-shadow: 0 0 0 3px var(--clr-primary-glow); }
+.tool-search input::placeholder { color: var(--clr-text-muted); }
+.tool-search-empty { text-align: center; color: var(--clr-text-muted); padding: 2.5rem 1rem 3rem; font-size: .95rem; }
+
+/* 首页工具分类 */
+.tool-group { margin-bottom: 2.4rem; }
+.tool-group-title {
+  display: flex; align-items: center; gap: .55rem;
+  font-size: 1.3rem; font-weight: 800; color: var(--clr-text);
+  margin: 0 0 1rem; letter-spacing: -.01em;
+}
+.tool-group-title::after {
+  content: ''; flex: 1; height: 2px; border-radius: 1px;
+  background: linear-gradient(90deg, var(--clr-border), transparent);
+}
+.tool-group-title span { font-size: 1.35rem; }
+
+/* 工具页：去掉 static-page 外层白卡的"卡中卡"冗余 */
+main.tool-page {
+  background: transparent; border: none; box-shadow: none; padding: 0;
+}
+main.tool-page .tool-card { border-radius: var(--r-lg); }
+
+/* 统计卡片：核心指标强调（第一项） */
+.wc-stat:first-child {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent-warm));
+  border-color: transparent; color: #fff;
+}
+.wc-stat:first-child .wc-num { color: #fff; }
+.wc-stat:first-child .wc-label { color: rgba(255,255,255,.85); }
+
+/* 次级按钮（清空/复制等低频操作） */
+.tool-btn-ghost {
+  background: var(--clr-surface); color: var(--clr-text-secondary);
+  border: 1px solid var(--clr-border); box-shadow: none; font-weight: 600;
+}
+.tool-btn-ghost:hover { border-color: var(--clr-primary); color: var(--clr-primary); box-shadow: none; transform: translateY(-1px); }
+
+/* 页脚减重：更紧凑、降低对比 */
+.site-footer { padding: clamp(1.6rem, 3vw, 2.2rem) 0 1.8rem; margin-top: 2.4rem; }
+.site-footer .footer-grid { margin-bottom: 1.1rem; }
+.site-footer .footer-col h4 { font-size: .82rem; margin-bottom: .45rem; }
+.site-footer .footer-col li { margin-bottom: .28rem; }
+.site-footer .footer-bottom { padding-top: .9rem; }
+
+/* 移动端：搜索框收窄 */
+@media (max-width: 600px) {
+  .tool-search { margin-top: 0; }
+  .tool-group-title { font-size: 1.12rem; }
+}
+
+
