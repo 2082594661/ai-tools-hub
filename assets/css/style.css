@@ -1207,8 +1207,8 @@ body.no-ads .ad-slot { display: none; }
 .breadcrumb a:hover { text-decoration: underline; }
 .breadcrumb .sep { margin: 0 .4rem; }
 
-/* 工具卡片内的面包屑微调 — 与 h1 文字对齐（补偿 emoji 宽度+gap） */
-.tool-card > .breadcrumb { margin-bottom: 1rem; margin-left: calc(2.2rem + 1rem); }
+/* 工具卡片内的面包屑：与内容区（emoji/表单）左边缘对齐 */
+.tool-card > .breadcrumb { margin-bottom: 1rem; margin-left: 0; }
 
 /* 独立工具页：卡片 */
 .tool-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--r-lg); box-shadow: var(--sh-card); padding: clamp(1.3rem, 4vw, 2.2rem); scroll-margin-top: 90px; }
