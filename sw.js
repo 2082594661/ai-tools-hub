@@ -6,7 +6,7 @@
  *  - PRECACHE 覆盖全部工具页与 JS，首访即缓存正确版本
  *  - CACHE 版本号已 bump（v1 → v2），旧缓存会被 activate 清除
  */
-const CACHE = 'aifunnyplay-v5';
+const CACHE = 'aifunnyplay-v6';
 const PRECACHE = [
   'index.html',
   'tools.html',
@@ -61,8 +61,13 @@ const PRECACHE = [
   'tools/due-date.html',
   'tools/random-generator.html',
   'tools/meme-maker.html',
+  'tools/image-pixelate.html',
+  'tools/id-photo.html',
+  'tools/relative-calc.html',
+  'tools/solar-term.html',
   'assets/js/tools-v3.js',
-  'assets/js/tools-v4.js'
+  'assets/js/tools-v4.js',
+  'assets/js/tools-v5.js'
 ];
 
 self.addEventListener('install', function (e) {

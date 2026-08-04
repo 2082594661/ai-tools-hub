@@ -1506,6 +1506,31 @@ main.tool-page .tool-card { border-radius: var(--r-lg); }
 .mm-canvas-wrap { margin-top: 1rem; display: flex; justify-content: center; }
 .mm-canvas { max-width: 100%; height: auto; border: 1px solid var(--clr-border); border-radius: var(--r-md); background: #fff; }
 .mm-canvas:empty { display: none; }
+
+/* ===== v5 新工具：图片像素化 / 证件照 滑块值 ===== */
+.tool-range-val { margin-left: .6rem; font-size: .85rem; color: var(--clr-primary); font-weight: 700; }
+
+/* ===== v5 新工具：亲戚称呼计算器 ===== */
+.rc-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: .3rem 0 .8rem; min-height: 2.2rem; }
+.rc-chip { display: inline-block; padding: .35rem .8rem; background: var(--clr-primary-soft); border: 1px solid var(--clr-primary); border-radius: 999px; font-size: .88rem; color: var(--clr-primary); font-weight: 700; }
+.rc-step-row { display: flex; gap: .4rem; align-items: center; width: 100%; }
+.rc-step-select { flex: 1; padding: .45rem .6rem; border: 1px solid var(--clr-border); border-radius: var(--r-sm); background: var(--clr-surface); color: var(--clr-text); font-size: .9rem; }
+.rc-answer { font-size: 1.15rem; padding: 1rem; background: var(--clr-primary-soft); border: 1px solid var(--clr-border); border-radius: var(--r-md); }
+.rc-answer strong { color: var(--clr-primary); font-size: 1.45rem; }
+.rc-chain { margin-top: .6rem; color: var(--clr-text-secondary); font-size: .85rem; }
+
+/* ===== v5 新工具：节气查询 ===== */
+.st-table { margin: .4rem 0; border: 1px solid var(--clr-border); border-radius: var(--r-md); overflow: hidden; }
+.st-row { display: flex; align-items: center; gap: .8rem; padding: .55rem .9rem; border-bottom: 1px solid var(--clr-border-subtle); font-size: .9rem; }
+.st-row:last-child { border-bottom: none; }
+.st-row:nth-child(even) { background: var(--clr-bg); }
+.st-major { background: var(--clr-primary-soft) !important; }
+.st-major .st-name { color: var(--clr-primary); font-weight: 800; }
+.st-season { min-width: 2rem; text-align: center; padding: .1rem .4rem; border-radius: 4px; font-size: .78rem; background: var(--clr-bg); border: 1px solid var(--clr-border); color: var(--clr-text-secondary); }
+.st-name { flex: 1; font-weight: 700; }
+.st-date { color: var(--clr-text-secondary); font-variant-numeric: tabular-nums; }
+.st-next-answer { font-size: 1.05rem; padding: 1rem; background: var(--clr-primary-soft); border: 1px solid var(--clr-border); border-radius: var(--r-md); }
+.st-next-answer strong { color: var(--clr-primary); font-size: 1.3rem; }
 .site-footer .footer-col h4 { font-size: .82rem; margin-bottom: .45rem; }
 .site-footer .footer-col li { margin-bottom: .28rem; }
 .site-footer .footer-bottom { padding-top: .9rem; }
