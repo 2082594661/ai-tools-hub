@@ -119,4 +119,44 @@
     if (document.readyState === 'complete') swReady();
     else window.addEventListener('load', swReady);
   }
+
+  // 8) 工具收藏（首页卡片 ☆ / ★，localStorage 持久化，收藏的工具显示为星标）
+  var FAV_KEY = 'aihub_favs';
+  function getFavs() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; }
+  }
+  function setFavs(arr) {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+  function cardSlug(card) {
+    var href = card.getAttribute('href') || '';
+    var m = href.match(/tools\/([a-z0-9-]+)\.html/);
+    return m ? m[1] : '';
+  }
+  var hubCards = document.querySelectorAll('.hub-card');
+  if (hubCards.length) {
+    var favs = getFavs();
+    var favBtn = null;
+    hubCards.forEach(function (card) {
+      var slug = cardSlug(card);
+      if (!slug) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'fav-btn' + (favs.indexOf(slug) !== -1 ? ' faved' : '');
+      btn.setAttribute('aria-label', '收藏此工具');
+      btn.setAttribute('title', favs.indexOf(slug) !== -1 ? '取消收藏' : '收藏此工具');
+      btn.innerHTML = favs.indexOf(slug) !== -1 ? '★' : '☆';
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var arr = getFavs();
+        var i = arr.indexOf(slug);
+        if (i !== -1) { arr.splice(i, 1); btn.classList.remove('faved'); btn.innerHTML = '☆'; btn.setAttribute('title', '收藏此工具'); }
+        else { arr.push(slug); btn.classList.add('faved'); btn.innerHTML = '★'; btn.setAttribute('title', '取消收藏'); }
+        setFavs(arr);
+        if (window.sortFavs) window.sortFavs();
+      });
+      card.appendChild(btn);
+    });
+  }
 })();

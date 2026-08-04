@@ -6,10 +6,11 @@
  *  - PRECACHE 覆盖全部工具页与 JS，首访即缓存正确版本
  *  - CACHE 版本号已 bump（v1 → v2），旧缓存会被 activate 清除
  */
-const CACHE = 'aifunnyplay-v6';
+const CACHE = 'aifunnyplay-v7';
 const PRECACHE = [
   'index.html',
   'tools.html',
+  'changelog.html',
   'about.html',
   'links.html',
   'contact.html',
