@@ -1494,6 +1494,18 @@ main.tool-page .tool-card { border-radius: var(--r-lg); }
 .tz-name { flex: 1; color: var(--clr-text); }
 .tz-date { color: var(--clr-text-secondary); font-size: .84rem; min-width: 90px; }
 .tz-time { min-width: 76px; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== v4 新工具：油耗/预产期 结果卡 ===== */
+.fc-result, .dd-result { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .8rem; }
+
+/* ===== v4 新工具：随机数生成器 ===== */
+.rg-output { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+.rg-num { display: inline-block; min-width: 2.6rem; padding: .45rem .7rem; text-align: center; background: var(--clr-primary-soft); border: 1px solid var(--clr-border); border-radius: var(--r-md); font-size: 1.05rem; font-weight: 800; color: var(--clr-primary); font-variant-numeric: tabular-nums; }
+
+/* ===== v4 新工具：表情包制作 ===== */
+.mm-canvas-wrap { margin-top: 1rem; display: flex; justify-content: center; }
+.mm-canvas { max-width: 100%; height: auto; border: 1px solid var(--clr-border); border-radius: var(--r-md); background: #fff; }
+.mm-canvas:empty { display: none; }
 .site-footer .footer-col h4 { font-size: .82rem; margin-bottom: .45rem; }
 .site-footer .footer-col li { margin-bottom: .28rem; }
 .site-footer .footer-bottom { padding-top: .9rem; }

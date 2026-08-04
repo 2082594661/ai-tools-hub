@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c45d3a">
+    <title>随机数生成器 - 免费在线随机抽数/抽奖工具</title>
+    <meta name="description" content="免费在线随机数生成器：自定义范围生成 1 到 100 个随机数，支持不重复、升序/降序，一键复制，纯前端本地生成。">
+    <meta name="baidu_union_verify" content="12c06fb585923e45afa002468feead30">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://aifunnyplay.cn/tools/random-generator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="随机数生成器 - 免费在线工具">
+    <meta property="og:description" content="免费在线随机数生成器：自定义范围生成 1 到 100 个随机数，支持不重复、升序/降序，一键复制，纯前端本地生成。">
+    <meta property="og:url" content="https://aifunnyplay.cn/tools/random-generator.html">
+    <meta property="og:image" content="https://aifunnyplay.cn/default-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "随机数生成器",
+      "description": "免费在线随机数生成器，范围自定、去重、排序、一键复制，纯本地生成。",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">跳到主内容</a>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-title">AI工具箱</a>
+            <nav>
+                <a href="../index.html">首页</a><a href="../index.html" class="nav-cta">🛠 小工具</a>
+            </nav>
+        </div>
+    </header>
+    <div class="ad-slot ad-top" id="ad-top"></div>
+    <div class="container">
+        <main id="main" class="static-page tool-page">
+            <section class="tool-card" id="random-generator">
+                <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span class="sep" aria-hidden="true">›</span><span>随机数生成器</span></nav>
+                <div class="tool-head">
+                    <span class="tool-emoji">🎲</span>
+                    <div>
+                        <h1>随机数生成器</h1>
+                        <p class="tool-desc">在指定范围内生成 1 到多个随机数，支持去重、排序，抽奖选题都好用。</p>
+                    </div>
+                </div>
+                <div class="tool-body">
+
+     <div class="tool-row">
+       <div class="tool-field">
+         <label for="rg-min">最小值</label>
+         <input type="number" id="rg-min" value="1" step="1">
+       </div>
+       <div class="tool-field">
+         <label for="rg-max">最大值</label>
+         <input type="number" id="rg-max" value="100" step="1">
+       </div>
+       <div class="tool-field">
+         <label for="rg-count">生成个数</label>
+         <input type="number" id="rg-count" value="5" min="1" max="100" step="1">
+       </div>
+     </div>
+     <div class="tool-row">
+       <div class="tool-field">
+         <label for="rg-unique">不重复</label>
+         <select id="rg-unique">
+           <option value="1" selected>是（每个数只出现一次）</option>
+           <option value="0">否（允许重复）</option>
+         </select>
+       </div>
+       <div class="tool-field">
+         <label for="rg-sort">排序</label>
+         <select id="rg-sort">
+           <option value="none" selected>不排序</option>
+           <option value="asc">升序</option>
+           <option value="desc">降序</option>
+         </select>
+       </div>
+     </div>
+     <div class="tool-row">
+       <button class="tool-btn" id="rg-run" type="button">🎲 生成随机数</button>
+       <button class="tool-btn tool-btn-ghost" id="rg-copy" type="button">📋 复制结果</button>
+     </div>
+     <div class="tool-msg" id="rg-msg" aria-live="polite"></div>
+     <div class="rg-output" id="rg-output" aria-live="polite"></div>
+     
+                    <div class="tool-usage">
+                        <strong>💡 怎么用：</strong>1. 设置范围（最小/最大）和生成个数<br>2. 可选「不重复」「排序」<br>3. 点「生成随机数」，可一键复制
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>导航</h4>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../about.html">关于本站</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../contact.html">联系我</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关说明</h4>
+                    <ul>
+                        <li><a href="../privacy.html">隐私政策</a></li>
+                        <li><a href="../disclaimer.html">免责声明</a></li>
+                        <li><a href="../links.html">友情链接</a></li>
+                        <li><a href="../sitemap.html">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI工具箱 | 个人维护的非商业网站</p>
+                <p class="beian"><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow" class="beian">京ICP备2026032489号-1</a>&nbsp;&nbsp;<img width="16" height="18" src="../assets/images/gongan.png" alt="公安备案" style="width:16px;vertical-align:middle;margin-right:2px"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402056201" rel="noreferrer" target="_blank" class="beian">京公网安备11011402056201号</a></p>
+            </div>
+        </div>
+        <div class="ad-slot ad-footer" id="ad-footer"></div>
+    </footer>
+    <script src="../assets/js/tools-v4.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
+</body>
+</html>
