@@ -6,7 +6,7 @@
  *  - PRECACHE 覆盖全部工具页与 JS，首访即缓存正确版本
  *  - CACHE 版本号已 bump（v1 → v2），旧缓存会被 activate 清除
  */
-const CACHE = 'aifunnyplay-v7';
+const CACHE = 'aifunnyplay-v8';
 const PRECACHE = [
   'index.html',
   'tools.html',
@@ -68,7 +68,35 @@ const PRECACHE = [
   'tools/solar-term.html',
   'assets/js/tools-v3.js',
   'assets/js/tools-v4.js',
-  'assets/js/tools-v5.js'
+  'assets/js/tools-v5.js',
+  'ai-background-remover-api-for-developers.html',
+  'ai-chatbot-for-small-business-customer-service.html',
+  'ai-code-assistant-vs-github-copilot-alternative.html',
+  'ai-data-analysis-tool-for-excel-beginners.html',
+  'ai-email-writer-chrome-extension-gmail.html',
+  'ai-image-generator-for-ecommerce-product-photos.html',
+  'ai-logo-maker-for-startups-free-trial.html',
+  'ai-music-generator-royalty-free-commercial-use.html',
+  'ai-paraphrasing-tool-to-avoid-plagiarism.html',
+  'ai-pdf-summarizer-for-research-papers.html',
+  'ai-presentation-maker-templates-guide.html',
+  'ai-presentation-maker-with-templates.html',
+  'ai-resume-builder-with-ats-optimization.html',
+  'ai-seo-tool-for-keyword-research-affiliate.html',
+  'ai-transcription-software-for-podcasters-comparison.html',
+  'best-ai-photo-enhancer-for-real-estate.html',
+  'best-ai-voice-generator-for-youtube-videos.html',
+  'best-ai-writing-tools-for-bloggers-2025.html',
+  'cheap-ai-content-detector-for-teachers.html',
+  'free-ai-video-editor-no-watermark.html',
+  'category/ai-writing.html',
+  'category/ai-image.html',
+  'category/ai-video-audio.html',
+  'category/ai-office.html',
+  'category/ai-marketing.html',
+  'category/ai-review.html',
+  'tag/index.html',
+  'robots.txt'
 ];
 
 self.addEventListener('install', function (e) {

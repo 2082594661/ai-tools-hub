@@ -1,17 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /assets/css/
-Disallow: /assets/images/
 
-Sitemap: https://aifunnyplay.cn/sitemap.xml
-
-# Allow crawling of article content
-Allow: /*.html
-
-# Baidu specific
-User-agent: Baiduspider
-Allow: /
-Allow: /*.html
-Disallow: /assets/css/
-Disallow: /assets/images/
 Sitemap: https://aifunnyplay.cn/sitemap.xml
