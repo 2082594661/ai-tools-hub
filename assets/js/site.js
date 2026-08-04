@@ -159,4 +159,112 @@
       card.appendChild(btn);
     });
   }
+
+  // 9) 工具页「复制结果」按钮（计算器/转换类工具，运行时注入，不改 HTML 结构）
+  //    结果容器 id 与页面 slug 映射；容器为空时给出提示，不产生无效复制。
+  var COPY_TARGETS = {
+    'age-calc': ['ac-result'],
+    'base-convert': ['bc-output'],
+    'bmi': ['bmi-output'],
+    'date-calc': ['dc-diff-out', 'dc-calc-out'],
+    'due-date': ['dd-result'],
+    'fuel-cost': ['fc-result'],
+    'mortgage': ['mg-output'],
+    'regex-tester': ['rt-output'],
+    'relative-calc': ['rc-result'],
+    'solar-term': ['st-list'],
+    'tax-calc': ['tc-result'],
+    'text-diff': ['td-output'],
+    'timestamp-convert': ['ts-output'],
+    'timezone-convert': ['tz-list'],
+    'unit-convert': ['uc-result'],
+    'word-count': ['wc-stats']
+  };
+  (function () {
+    var slugM = (location.pathname || '').match(/tools\/([a-z0-9-]+)\.html/);
+    if (!slugM) return;
+    var targets = COPY_TARGETS[slugM[1]];
+    if (!targets || !targets.length) return;
+
+    function copyPlain(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
+      }
+      return legacyCopy(text);
+    }
+    function legacyCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+    }
+
+    targets.forEach(function (id) {
+      var box = document.getElementById(id);
+      if (!box || box.getAttribute('data-copy-enhanced')) return;
+      box.setAttribute('data-copy-enhanced', '1');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tool-btn tool-btn-ghost';
+      btn.textContent = '📋 复制结果';
+      btn.setAttribute('aria-label', '复制结果');
+      btn.style.marginTop = '.7rem';
+      btn.addEventListener('click', function () {
+        var text = '';
+        if (id === 'wc-stats') {
+          // 统计卡：逐项拼成「指标：数值」
+          box.querySelectorAll('.wc-stat').forEach(function (s) {
+            var num = s.querySelector('.wc-num');
+            var lab = s.querySelector('.wc-label');
+            if (num && lab) text += (lab.textContent || '').trim() + '：' + (num.textContent || '').trim() + '\n';
+          });
+        } else {
+          text = (box.textContent || '').replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+        }
+        if (!text) {
+          btn.textContent = '⚠️ 暂无结果';
+          setTimeout(function () { btn.textContent = '📋 复制结果'; }, 1400);
+          return;
+        }
+        copyPlain(text).then(function () {
+          btn.textContent = '✓ 已复制';
+          btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = '📋 复制结果'; btn.classList.remove('copied'); }, 1400);
+        }).catch(function () {
+          btn.textContent = '❌ 复制失败，请手动选择';
+          setTimeout(function () { btn.textContent = '📋 复制结果'; }, 1800);
+        });
+      });
+      box.parentNode.insertBefore(btn, box.nextSibling);
+    });
+  })();
+
+  // 10) 无障碍运行时增强（不改 HTML 文件）
+  //  - 隐藏文件输入补 aria-label
+  ['ic-file', 'wm-file'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el && !el.getAttribute('aria-label')) el.setAttribute('aria-label', '选择图片文件');
+  });
+  //  - 未被 label 关联的可见 checkbox（如平铺水印开关），用相邻文本补 aria-label
+  document.querySelectorAll('.tool-page input[type="checkbox"]').forEach(function (cb) {
+    if (cb.closest('label')) return;
+    if (cb.id && document.querySelector('label[for="' + cb.id + '"]')) return;
+    if (cb.getAttribute('aria-label')) return;
+    var txt = '';
+    var n = cb.nextSibling;
+    while (n && n.nodeType === 3) { txt += n.nodeValue; n = n.nextSibling; }
+    if (!txt) txt = (cb.parentNode ? cb.parentNode.textContent : '') || '';
+    txt = txt.replace(/\s+/g, ' ').trim();
+    if (txt) cb.setAttribute('aria-label', txt);
+  });
+  //  - relative-calc 关系链 label 指向不存在的控件：移除无效 for，保留可见文本
+  var rcRel = document.querySelector('label[for="rc-rel"]');
+  if (rcRel) rcRel.removeAttribute('for');
 })();

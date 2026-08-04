@@ -1039,6 +1039,16 @@ body.no-ads .ad-slot { display: none; }
 }
 [data-theme="dark"] .article-content th { background: var(--clr-bg); }
 [data-theme="dark"] img { opacity: .92; }
+/* 深色模式对比度修复：工具页消息提示 / 文本对比高亮 / 图片卡片底色 */
+[data-theme="dark"] .tool-msg { color: #f2a48e; }
+[data-theme="dark"] .tool-msg.msg-error { color: #f2a48e; }
+[data-theme="dark"] .tool-msg.msg-ok { color: #8fd6b2; }
+[data-theme="dark"] .diff-add { color: #8fd6b2; }
+[data-theme="dark"] .diff-del { color: #f2a48e; }
+[data-theme="dark"] .diff-legend i { border: 1px solid var(--clr-border); }
+[data-theme="dark"] .ic-card img { background: #2c271f; }
+[data-theme="dark"] .result-line b { color: #f0967c; }
+[data-theme="dark"] .tool-usage code { background: #2c271f; }
 
 /* ══════════════════════════════════════
    404 页面
